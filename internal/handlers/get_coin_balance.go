@@ -4,8 +4,8 @@ import (
     "encoding/json"
     "net/http"
 
-    "github.com/avukadin/goapi/api"
-    "github.com/avukadin/goapi/internal/tools"
+    "github.com/esadsen/go_api/api"
+    "github.com/esadsen/go_api/internal/tools"
     log "github.com/sirupsen/logrus"
     "github.com/gorilla/schema"
 )
@@ -31,7 +31,7 @@ func GetCoinBalance(w http.ResponseWriter, r *http.Request) {
     }
 
 	var tokenDetails *tools.CoinDetails
-	tokenDetails = (*database).GetUserCoins(params.Username)
+	tokenDetails = (*database).GetUserCoinDetails(params.Username)
 	if tokenDetails == nil {
 		log.Error(err)
 		api.InternalErrorHandler(w)
