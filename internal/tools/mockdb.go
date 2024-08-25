@@ -50,7 +50,7 @@ func (d *mockDB) GetUserLoginDetails(username string) *LoginDetails {
     return &clientData
 }
 
-func (d *mockDB) GetUserCoins(username string) *CoinDetails {
+func (d *mockDB) GetUserCoinDetails(username string) *CoinDetails {
     // Simulate DB call
     time.Sleep(time.Second * 1)
 
